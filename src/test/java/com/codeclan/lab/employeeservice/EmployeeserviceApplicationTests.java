@@ -17,13 +17,10 @@ class EmployeeserviceApplicationTests {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
-
 	@Autowired
 	DepartmentRepository departmentRepository;
-
 	@Autowired
 	AssignmentRepository assignmentRepository;
-
 	@Autowired
 	ProjectRepository projectRepository;
 
@@ -41,15 +38,17 @@ class EmployeeserviceApplicationTests {
 
 		Department department = new Department("HR");
 		departmentRepository.save(department);
-		Employee employee1 = new Employee("Louis", "Cuthbertson",123, department);
+
+		Employee employee1 = new Employee("Sara", "Brown",123, department);
 		Employee employee2 = new Employee("Marc", "Scott", 987, department);
 		employeeRepository.save(employee1);
 		employeeRepository.save(employee2);
-		Project project = new Project("CodeCLan project", 5);
+
+		Project project = new Project("CodeClan", 5);
 		projectRepository.save(project);
+
 		Assignment assignment1 = new Assignment(employee1,project);
 		assignmentRepository.save(assignment1);
-
 	}
 
 }

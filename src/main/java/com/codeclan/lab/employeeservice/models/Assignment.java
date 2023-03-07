@@ -1,5 +1,6 @@
 package com.codeclan.lab.employeeservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,10 +12,12 @@ public class Assignment {
     @Column(name = "id")
     private Long id;
 
+    @JsonIgnoreProperties({"assignments"})
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
+    @JsonIgnoreProperties({"assignments"})
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
     private Project project;

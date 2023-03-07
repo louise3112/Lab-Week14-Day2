@@ -18,6 +18,7 @@ public class Employee {
     private String lastName;
     @Column(name = "employee_number")
     private int employeeNumber;
+    @JsonIgnoreProperties({"employees"})
     @ManyToOne
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;

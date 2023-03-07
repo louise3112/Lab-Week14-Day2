@@ -21,7 +21,6 @@ public class Project {
 
     @JsonIgnoreProperties({"project"})
     @OneToMany(mappedBy = "project")
-
     private List<Assignment> assignments;
 
     public Project() {
